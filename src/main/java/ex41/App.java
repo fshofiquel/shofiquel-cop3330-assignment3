@@ -5,19 +5,20 @@
 package ex41;
 
 import java.io.*;
+import java.util.Objects;
 
 public class App
 {
     public static sortedList newList = new sortedList();
-    public static String names;
+    public static String[] names;
 
     public static void main(String[] args) throws IOException
     {
         BufferedReader iF = new BufferedReader(new FileReader("src/main/java/ex41/exercise41_input.txt"));
         BufferedWriter oF = new BufferedWriter(new FileWriter("src/main/java/ex41/exercise41_output.txt"));
 
-        newList.storeNames(iF, oF, names);
-        System.out.print("Operation completed");
+        names = newList.storeNames(iF, oF, names);
+
         iF.close();
         oF.close();
 
@@ -26,17 +27,20 @@ public class App
 
 class sortedList
 {
-    public void storeNames(BufferedReader iF, BufferedWriter oF, String names) throws IOException
+    public String[] storeNames(BufferedReader iF, BufferedWriter oF, String[] names) throws IOException
     {
-        while ((names = iF.readLine()) != null)
+        int i = 0;
+        for (i = 0; iF.readLine() != null; i++)
         {
-            oF.write(names);
+            names[i] = iF.readLine();
         }
-
+        System.out.print("Stored names in string array...");
+        return names;
     }
 
-    public void sortNames()
+    public String[] sortNames(String[] names)
     {
+        return null;
     }
 
     public void outputToFile()
