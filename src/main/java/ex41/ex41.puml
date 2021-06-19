@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App
+{
+    + Input File
+    + Output File
+
+    + nameSorter.storeName(Input File, Output File)
+}
+
+class nameSorter
+{
+    - List<String> Name
+
+    + storeName(Input File, Output File)
+    + sortName(Output File)
+    + outputToFile(Output File)
+}
+
+App o-> nameSorter
+
+@enduml

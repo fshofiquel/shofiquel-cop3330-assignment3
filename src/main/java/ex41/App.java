@@ -5,46 +5,25 @@
 package ex41;
 
 import java.io.*;
-import java.util.Objects;
+import java.util.Scanner;
+
+/*
+    Fairly straight forward. Just create the input and output File IO variables needed for nameSorter class to handle
+    and then close the file.
+ */
 
 public class App
 {
-    public static sortedList newList = new sortedList();
-    public static String[] names;
-
+    public static nameSorter newName = new nameSorter();
     public static void main(String[] args) throws IOException
     {
-        BufferedReader iF = new BufferedReader(new FileReader("src/main/java/ex41/exercise41_input.txt"));
-        BufferedWriter oF = new BufferedWriter(new FileWriter("src/main/java/ex41/exercise41_output.txt"));
+        File inFile = new File("src/main/java/ex41/exercise41_input.txt");
+        File outFile = new File("src/main/java/ex41/exercise41_output.txt");
+        Scanner inScanner = new Scanner(inFile);
+        BufferedWriter outputFile = new BufferedWriter(new FileWriter(outFile));
 
-        names = newList.storeNames(iF, oF, names);
-
-        iF.close();
-        oF.close();
-
+        newName.storeName(inScanner, outputFile);
+        inScanner.close();
+        outputFile.close();
     }
 }
-
-class sortedList
-{
-    public String[] storeNames(BufferedReader iF, BufferedWriter oF, String[] names) throws IOException
-    {
-        int i = 0;
-        for (i = 0; iF.readLine() != null; i++)
-        {
-            names[i] = iF.readLine();
-        }
-        System.out.print("Stored names in string array...");
-        return names;
-    }
-
-    public String[] sortNames(String[] names)
-    {
-        return null;
-    }
-
-    public void outputToFile()
-    {
-    }
-}
-
