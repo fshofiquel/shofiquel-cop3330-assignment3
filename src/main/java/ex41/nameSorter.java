@@ -53,7 +53,6 @@ public class nameSorter
         {
             outputFile.write(name);
             outputFile.newLine();
-            System.out.println(name);
         }
     }
 }
