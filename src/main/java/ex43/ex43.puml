@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class App
+{
+    'This for the most part will do the intial parts of the program
+    + String siteName
+    + String author
+}
+
+' Creates directors
+class generateFolders
+{
+}
+
+' Creates HTML and populates it with Title and Author
+class generateHTML
+{
+}
+
+
+
+@enduml
