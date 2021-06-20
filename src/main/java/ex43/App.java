@@ -38,8 +38,6 @@ public class App
 		basePath = basePath + siteName + "/";
 
 		String test = file.getPath();
-		System.out.println(test);
-
 
 		System.out.print("Do you want a folder for JavaScript? ");
 		yN = sc.nextLine();

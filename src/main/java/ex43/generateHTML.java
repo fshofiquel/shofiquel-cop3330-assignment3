@@ -15,5 +15,11 @@ public class generateHTML
 	{
 		File file = new File(basePath);
 		BufferedWriter htmlOutput = new BufferedWriter(new FileWriter(basePath+"index.html"));
+
+		htmlOutput.write("<title>"+siteName+"</title>");
+		htmlOutput.newLine();
+		htmlOutput.write("<meta name = \""+author+"\"/>");
+
+		htmlOutput.close();
 	}
 }
