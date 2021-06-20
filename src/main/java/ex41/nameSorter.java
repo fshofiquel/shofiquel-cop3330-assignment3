@@ -26,26 +26,26 @@ import java.util.*;
 
 public class nameSorter
 {
-    private static final List<String> temps = new ArrayList<>();
+    private static final List<String> nameList = new ArrayList<>();
 
     public void storeName(Scanner inScanner, BufferedWriter outputFile) throws IOException
     {
         while (inScanner.hasNextLine())
         {
-            temps.add(inScanner.nextLine());
+            nameList.add(inScanner.nextLine());
         }
         sortName(outputFile);
     }
 
     public void sortName(BufferedWriter outputFile) throws IOException
     {
-        Collections.sort(temps);
+        Collections.sort(nameList);
         outputToFile(outputFile);
     }
 
     public void outputToFile(BufferedWriter outputFile) throws IOException
     {
-        String[] names = temps.toArray(new String[0]);
+        String[] names = nameList.toArray(new String[0]);
         outputFile.write("Total of "+ names.length+" names\n");
         outputFile.write("-----------------\n");
 
